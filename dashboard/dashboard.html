@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOORS · Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html" class="marca">DOORS</a>
+    <span id="robo">ROBO-01</span>
+    <span id="conexao" class="chip off">OFFLINE</span>
+  </header>
+
+  <main class="painel">
+    <section class="cartao">
+      <h2>Estado</h2>
+      <p id="estado" class="valor">—</p>
+      <p class="sub">Última leitura: <span id="idade">—</span></p>
+    </section>
+
+    <section class="cartao largo">
+      <h2>Sensores (cm)</h2>
+      <div class="sensores">
+        <div><span>Esquerdo</span><strong id="s-esq">—</strong><div class="barra"><i id="b-esq"></i></div></div>
+        <div><span>Centro</span><strong id="s-cen">—</strong><div class="barra"><i id="b-cen"></i></div></div>
+        <div><span>Direito</span><strong id="s-dir">—</strong><div class="barra"><i id="b-dir"></i></div></div>
+      </div>
+    </section>
+
+    <section class="cartao largo">
+      <h2>Motores (PWM)</h2>
+      <div class="motor"><span>Esquerdo</span><div class="barra"><i id="m-esq"></i></div><strong id="v-esq">—</strong></div>
+      <div class="motor"><span>Direito</span><div class="barra"><i id="m-dir"></i></div><strong id="v-dir">—</strong></div>
+    </section>
+
+    <section class="cartao largo">
+      <h2>Histórico de sessões</h2>
+      <table>
+        <thead><tr><th>#</th><th>Tipo</th><th>Tempo (s)</th><th>Colisões</th><th>Início</th></tr></thead>
+        <tbody id="sessoes"><tr><td colspan="5">—</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/dashboard.js"></script>
+</body>
+</html>

@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Projeto DOORS
+build/
+.pio/
+analysis/output/
+.DS_Store
+Thumbs.db
+~$*

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOORS · Robô desviador de obstáculos</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topo">
+    <a href="index.html" class="marca">DOORS</a>
+    <nav>
+      <a href="#projeto">Projeto</a>
+      <a href="#hardware">Hardware</a>
+      <a href="#software">Software</a>
+      <a href="#equipe">Equipe</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Robô autônomo que <span>desvia de obstáculos</span> sem parar</h1>
+      <p>Três sensores ultrassônicos, um ESP32 e uma lógica geométrica de desvio. Projeto Integrador de Engenharia da Computação do Centro Universitário SENAC, 2026.</p>
+      <a class="botao" href="dashboard.html">Ver o robô ao vivo</a>
+    </section>
+
+    <section class="secao" id="projeto">
+      <h2>O desafio</h2>
+      <p>Percorrer sozinho uma pista com obstáculos, no menor tempo possível, sem controle manual e sem bater nas barreiras.</p>
+      <div class="grade">
+        <div class="cartao"><h3>Ler</h3><p>Três HC-SR04, a 0° e ±20°, medem a distância cerca de 22 vezes por segundo cada.</p></div>
+        <div class="cartao"><h3>Decidir</h3><p>O ESP32 calcula o ângulo de desvio e o raio da curva para passar antes de chegar ao obstáculo.</p></div>
+        <div class="cartao"><h3>Desviar</h3><p>A ponte H ajusta a velocidade de cada roda; se precisar, o robô gira no próprio eixo.</p></div>
+      </div>
+    </section>
+
+    <section class="secao" id="hardware">
+      <h2>Hardware</h2>
+      <div class="grade">
+        <div class="cartao"><h3>ESP32 WROOM-32</h3><p>Processa os sensores e envia telemetria por Wi-Fi.</p></div>
+        <div class="cartao"><h3>TB6612FNG</h3><p>Ponte H que controla sentido e velocidade dos motores.</p></div>
+        <div class="cartao"><h3>2× N20 6 V</h3><p>Motores de 500 rpm com rodas de 44 mm e roda boba.</p></div>
+        <div class="cartao"><h3>Energia</h3><p>Bateria 2S de 7,4 V e step-down LM2596 em 5 V.</p></div>
+      </div>
+    </section>
+
+    <section class="secao" id="software">
+      <h2>Software</h2>
+      <div class="grade">
+        <div class="cartao"><h3>Firmware C++</h3><p>Leitura por interrupção, filtro de ruído e máquina de estados.</p></div>
+        <div class="cartao"><h3>FastAPI</h3><p>Recebe a telemetria do robô e serve os dados ao painel.</p></div>
+        <div class="cartao"><h3>Supabase</h3><p>Banco PostgreSQL com sessões, leituras e eventos.</p></div>
+        <div class="cartao"><h3>Dashboard</h3><p>Sensores, motores e histórico de voltas em tempo real.</p></div>
+      </div>
+    </section>
+
+    <section class="secao" id="equipe">
+      <h2>Equipe DOORS</h2>
+      <p>Montagem e soldagem · Programação · Documentação e design. Engenharia da Computação, turma da manhã.</p>
+    </section>
+  </main>
+
+  <footer>DOORS · Projeto Integrador · Centro Universitário SENAC · 2026</footer>
+</body>
+</html>

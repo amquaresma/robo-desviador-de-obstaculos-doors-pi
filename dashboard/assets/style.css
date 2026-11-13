@@ -1,0 +1,102 @@
+/* ---------------------------------------------------------------------------
+   DOORS - estilo da landing page e do dashboard
+--------------------------------------------------------------------------- */
+
+:root {
+  --fundo: #0e1a2b;
+  --cartao: #16263b;
+  --borda: #24384f;
+  --texto: #f2f5f8;
+  --suave: #9fb3c4;
+  --verde: #3fd1c0;
+  --ambar: #f5b841;
+  --vermelho: #f2766b;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+a { color: var(--verde); }
+
+/* Topo */
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--borda);
+}
+.marca { font-weight: 700; font-size: 1.4rem; text-decoration: none; letter-spacing: 2px; }
+.topo nav { margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap; }
+.topo nav a { color: var(--suave); text-decoration: none; }
+.topo nav a:hover { color: var(--texto); }
+
+.chip { padding: 4px 12px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; }
+.chip.on { background: rgba(63, 209, 192, 0.15); color: var(--verde); }
+.chip.off { background: rgba(242, 118, 107, 0.15); color: var(--vermelho); }
+
+/* Dashboard */
+.painel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.cartao {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 20px;
+}
+.cartao h2 { font-size: 1rem; color: var(--suave); margin-bottom: 12px; font-weight: 600; }
+.largo { grid-column: 1 / -1; }
+.valor { font-size: 2rem; font-weight: 700; color: var(--ambar); }
+.sub { color: var(--suave); font-size: 0.9rem; }
+
+.sensores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.sensores span, .motor span { color: var(--suave); font-size: 0.9rem; }
+.sensores strong { display: block; font-size: 1.6rem; }
+
+.barra { height: 10px; background: var(--borda); border-radius: 999px; overflow: hidden; margin-top: 6px; }
+.barra i { display: block; height: 100%; width: 0; background: var(--verde); transition: width 0.3s; }
+.barra i.re { background: var(--ambar); }
+
+.motor { display: grid; grid-template-columns: 90px 1fr 60px; align-items: center; gap: 12px; margin-bottom: 10px; }
+.motor strong { text-align: right; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--borda); }
+th { color: var(--suave); font-weight: 600; }
+
+/* Landing page */
+.hero { max-width: 1000px; margin: 0 auto; padding: 72px 24px 48px; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; }
+.hero h1 span { color: var(--verde); }
+.hero p { color: var(--suave); font-size: 1.15rem; margin-top: 16px; max-width: 720px; }
+.botao {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: var(--verde);
+  color: var(--fundo);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.secao { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+.secao h2 { font-size: 1.6rem; margin-bottom: 16px; }
+.secao p { color: var(--suave); }
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
+.grade .cartao h3 { font-size: 1.05rem; margin-bottom: 6px; }
+.grade .cartao p { font-size: 0.95rem; }
+
+footer { text-align: center; color: var(--suave); padding: 32px 24px; border-top: 1px solid var(--borda); font-size: 0.9rem; }
